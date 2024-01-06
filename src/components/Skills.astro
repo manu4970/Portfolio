@@ -1,0 +1,126 @@
+---
+const SKILLSFRONT = [
+  {
+    name: "HTML",
+    logo: "https://img.icons8.com/color/48/000000/html-5.png",
+    alt: "HTML",
+  },
+  {
+    name: "CSS",
+    logo: "https://img.icons8.com/color/48/000000/css3.png",
+    alt: "CSS",
+  },
+  {
+    name: "JavaScript",
+    logo: "https://img.icons8.com/color/48/000000/javascript.png",
+    alt: "JavaScript",
+  },
+  {
+    name: "React",
+    logo: "https://img.icons8.com/color/48/000000/react-native.png",
+    alt: "React",
+  },
+  {
+    name: "Bootstrap",
+    logo: "https://img.icons8.com/color/48/000000/bootstrap.png",
+    alt: "Boostrap",
+  },
+  {
+    name: "Tailwind",
+    logo: "https://img.icons8.com/fluency/48/tailwind_css.png",
+    alt: "Tailwind",
+  },
+];
+const SKILLSBACK = [
+  {
+    name: "Python",
+    logo: "https://img.icons8.com/color/48/000000/python.png",
+    alt: "Python",
+  },
+  {
+    name: "SQL",
+    logo: "https://img.icons8.com/color/48/000000/sql.png",
+    alt: "SQL",
+  },
+  {
+    name: "Flask",
+    logo: "https://img.icons8.com/ios/50/FFFFFF/flask.png",
+    alt: "Flask",
+  },
+  {
+    name: "PostgreSQL",
+    logo: "https://img.icons8.com/color/48/000000/postgreesql.png",
+    alt: "PostgreSQL",
+  },
+  {
+    name: "JWT",
+    logo: "https://img.icons8.com/color/48/java-web-token.png",
+    alt: "JWT",
+  },
+];
+
+const SKILLSOTHER = [
+  {
+    name: "Git",
+    logo: "https://img.icons8.com/color/48/000000/git.png",
+    alt: "Git",
+  },
+  {
+    name: "GitHub",
+    logo: "https://img.icons8.com/fluency-systems-filled/48/github.png",
+    alt: "GitHub",
+  },
+  {
+    name: "VSCode",
+    logo: "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png",
+    alt: "VSCode",
+  },
+  {
+    name: "Linux",
+    logo: "https://img.icons8.com/color/48/000000/linux.png",
+    alt: "Linux",
+  },
+  {
+    name: "Docker",
+    logo: "https://img.icons8.com/color/48/000000/docker.png",
+    alt: "Docker",
+  },
+];
+---
+
+<section class="w-full mx-auto lg:w-[700px] mb-24">
+  <h3 class="test-bold text-3xl mb-8 mt-5">Habilidades</h3>
+  <h4 class="flex justify-center text-xl mb-4">Frontend</h4>
+  <div class="flex flex-wrap justify-center mt-8 gap-4 mb-6">
+    {
+      SKILLSFRONT.map((front) => (
+        <div class="flex items-center mb-6">
+          <img src={front.logo} alt={front.alt} class="w-10 h-10" />
+          <p class="ml-2">{front.name}</p>
+        </div>
+      ))
+    }
+  </div>
+  <h4 class="flex justify-center text-xl mb-4">Backend</h4>
+  <div class="flex flex-wrap justify-center mt-8 gap-4 mb-6">
+    {
+      SKILLSBACK.map((back) => (
+        <div class="flex items-center mb-6">
+          <img src={back.logo} alt={back.alt} class="w-10 h-10" />
+          <p class="ml-2">{back.name}</p>
+        </div>
+      ))
+    }
+  </div>
+  <h4 class="flex justify-center text-xl mb-4">Utilidades / Herramientas</h4>
+  <div class="flex flex-wrap justify-center mt-8 gap-4 mb-6">
+    {
+      SKILLSOTHER.map((other) => (
+        <div class="flex items-center mb-6">
+          <img src={other.logo} alt={other.alt} class="w-10 h-10" />
+          <p class="ml-2">{other.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
