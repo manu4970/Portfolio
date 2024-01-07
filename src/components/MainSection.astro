@@ -3,17 +3,31 @@ import Badge from "./Badge.astro";
 import DownloadFile from "../../src/icons/DownloadFile.astro";
 import Linkedin from "../../src/icons/Linkedin.astro";
 import Github from "../../src/icons/Github.astro";
+
+function downloadCV() {
+  const downloadInstance = document.createElement("a");
+  downloadInstance.href = "src/assets/Manuel-Perez-FlowCV-Resume-20240102.pdf";
+  downloadInstance.target = "_blank";
+
+  document.body.appendChild(downloadInstance);
+  downloadInstance.click();
+  document.body.removeChild(downloadInstance);
+}
+
+// function download() {
+//   downloadCV('src/assets/Manuel-Perez-FlowCV-Resume-20240102.pdf')
+// }
 ---
 
 <section class="w-full mx-auto lg:w-[700px] py-48">
   <h3 class="text-white text-3xl font-bold">Hola, Soy Manuel Perez</h3>
   <div class="flex gap-2 items-start mt-2">
-    <h2 class="mb-4">Full Stack Developer</h2>
+    <h2>Full Stack Developer</h2>
     <a href="https://www.linkedin.com/in/manuelperezf/" target="_blank">
       <Badge text="Open for Work" />
     </a>
   </div>
-  <p class="text-pretty">
+  <p class="text-pretty my-8">
     Soy un desarrollador web full stack
     <span class="text-[#ff4864]">con experiencia en soporte TI y Redes,</span>
     donde aprendi a trabajar en equipo y a resolver problemas de manera rapida y
@@ -43,6 +57,7 @@ import Github from "../../src/icons/Github.astro";
     <div>
       <a href="/">
         <button
+          (click)="downloadCV()"
           class="bg-gradient-to-l from-[#FF0028] to-[#1E1C23] px-4 py-2 rounded-md flex gap-2"
         >
           Descargar CV
