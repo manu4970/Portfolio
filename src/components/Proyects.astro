@@ -24,13 +24,13 @@ const PROJECTS = [
 ---
 
 <section id="proyectos" class="section w-full mx-auto lg:w-[700px] mb-10 pt-20">
-  <h3 class="flex items-center gap-2 test-bold text-3xl mb-6">
+  <h3 class="flex justify-center items-center gap-2 test-bold text-3xl mb-6">
     <a><Code /></a>Proyectos
   </h3>
-  <div class="grid grid-cols-2 gap-5">
+  <div class="grid md:grid-cols-2 md:w-full px-4 gap-4">
     {
       PROJECTS.map((proyect) => (
-        <article class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-[#1E1C23] dark:border-gray-700">
+        <article class=" bg-white border border-gray-200 rounded-lg shadow dark:bg-[#1E1C23] dark:border-gray-700">
           <a href={proyect.url}>
             <CardPh />
           </a>

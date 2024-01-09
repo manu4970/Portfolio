@@ -3,42 +3,33 @@ import Badge from "./Badge.astro";
 import DownloadFile from "../../src/icons/DownloadFile.astro";
 import Linkedin from "../../src/icons/Linkedin.astro";
 import Github from "../../src/icons/Github.astro";
-
-function downloadCV() {
-  const downloadInstance = document.createElement("a");
-  downloadInstance.href = "src/assets/Manuel-Perez-FlowCV-Resume-20240102.pdf";
-  downloadInstance.target = "_blank";
-
-  document.body.appendChild(downloadInstance);
-  downloadInstance.click();
-  document.body.removeChild(downloadInstance);
-}
-
-// function download() {
-//   downloadCV('src/assets/Manuel-Perez-FlowCV-Resume-20240102.pdf')
-// }
 ---
 
-<section class="w-full mx-auto lg:w-[700px] py-48">
-  <h3 class="text-white text-3xl font-bold">Hola, Soy Manuel Perez</h3>
-  <div class="flex gap-2 items-start mt-2">
+<section class="w-full mx-auto py-48 text-center px-8 lg:w-[700px]">
+  <h3 class="text-white text-3xl font-bold">
+    Hola, Soy <span
+      class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF0028] to-[#757070]"
+      >Manuel Perez</span
+    >
+  </h3>
+  <div class="flex justify-center gap-2 mt-3">
     <h2>Full Stack Developer</h2>
     <a href="https://www.linkedin.com/in/manuelperezf/" target="_blank">
       <Badge text="Open for Work" />
     </a>
   </div>
-  <p class="text-pretty my-8">
+  <p class="text-pretty my-10 text-white">
     Soy un desarrollador web full stack
     <span class="text-[#ff4864]">con experiencia en soporte TI y Redes,</span>
     donde aprendi a trabajar en equipo y a resolver problemas de manera rapida y
     eficiente. Me encanta aprender nuevas tecnologias y mejorar mis habilidades.
   </p>
-  <div class="flex justify-between gap-3 mt-4">
+  <div class="flex flex-wrap justify-center lg:justify-between gap-3 mt-4">
     <div class="flex gap-2">
       <a href="https://www.linkedin.com/in/manuelperezf/" target="_blank">
         <button
           type="button"
-          class="flex gap-1 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-2 py-2 dark:bg-[#1E1C23] dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          class="flex gap-1 text-white bg-[#1E1C23] hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-[#FF0028] font-medium rounded-lg px-2 py-2"
         >
           <Linkedin />
           LinkedIn
@@ -47,7 +38,7 @@ function downloadCV() {
       <a href="https://github.com/manu4970" target="_blank">
         <button
           type="button"
-          class="flex gap-1 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-2 py-2 dark:bg-[#1E1C23] dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+          class="flex gap-1 text-white bg-[#1E1C23] hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-[#FF0028] font-medium rounded-lg px-2 py-2"
         >
           <Github />
           GitHub
@@ -55,10 +46,11 @@ function downloadCV() {
       </a>
     </div>
     <div>
-      <a href="/">
+      <a href="
+          ">
         <button
-          (click)="downloadCV()"
-          class="bg-gradient-to-l from-[#FF0028] to-[#1E1C23] px-4 py-2 rounded-md flex gap-2"
+          id="downloadButton"
+          class="text-white bg-gradient-to-l from-[#FF0028] to-[#1E1C23] px-4 py-2 rounded-md flex gap-2"
         >
           Descargar CV
           <DownloadFile />
@@ -67,3 +59,28 @@ function downloadCV() {
     </div>
   </div>
 </section>
+
+<script>
+  document
+    .getElementById("downloadButton")
+    .addEventListener("click", function () {
+      // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
+      var pdfFilePath = "src/assets/Manuel-Perez-FlowCV-Resume-20240102.pdf";
+
+      // Create a new anchor element
+      var link = document.createElement("a");
+      link.href = pdfFilePath;
+
+      // Set the download attribute with the desired file name
+      link.download = "Manuel_Perez_CV.pdf";
+
+      // Append the link to the document
+      document.body.appendChild(link);
+
+      // Trigger a click event on the link to start the download
+      link.click();
+
+      // Remove the link from the document after the download is initiated
+      document.body.removeChild(link);
+    });
+</script>
