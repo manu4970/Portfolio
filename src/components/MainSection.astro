@@ -64,24 +64,16 @@ import Github from "../../src/icons/Github.astro";
   document
     .getElementById("downloadButton")
     .addEventListener("click", function () {
-      // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
-      var pdfFilePath =
-        "https://manuelperezf.com/download/Manuel-Perez-FlowCV-Resume-20240102.pdf";
-
-      // Create a new anchor element
+      var pdfFilePath = "https://manuelperezf.com/download/Manuel_Perez_CV.pdf";
       var link = document.createElement("a");
       link.href = pdfFilePath;
 
-      // Set the download attribute with the desired file name
       link.download = "Manuel_Perez_CV.pdf";
 
-      // Append the link to the document
       document.body.appendChild(link);
 
-      // Trigger a click event on the link to start the download
       link.click();
 
-      // Remove the link from the document after the download is initiated
       document.body.removeChild(link);
     });
 </script>
