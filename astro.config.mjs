@@ -4,5 +4,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  build: {
+		assetsPrefix: "https://smtpjs.com/v3/smtp.js",
+	},
 });
